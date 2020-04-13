@@ -19,7 +19,8 @@ app.use(cors()); //to enable Cross-Origin Resource Sharing
 
 //NOT working online
 // app.use(express.static("test"));    //works locally, NOT online
-
+// app.get('/app', function (req, res, next) {  res.sendFile(path.join(__dirname, 'test', 'index.html')); });
+app.get('/app', function (req, res, next) { res.sendFile(__dirname + '/test/index.html'); });
 
 //OK
 app.get('/', (req, res) => res.sendFile(__dirname + '/html/index.html'));   //works
@@ -32,9 +33,7 @@ app.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 /* GET React App */
-app.get('/app', function (req, res, next) {
-  res.sendFile(path.join(__dirname, 'test', 'index.html'));
-});
+
 
 
 
