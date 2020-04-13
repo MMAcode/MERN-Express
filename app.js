@@ -25,7 +25,7 @@ app.get('/appReact', function (req, res, next) { res.sendFile(__dirname + '/buil
 
 
 //OK
-app.use(express.static(__dirname + "/test"));
+app.use(express.static("test"));
 // app.get('/', (req, res) => { res.sendFile(__dirname + '/html/index.html'); });   
 app.get('/a', (req, res) => { res.sendFile(__dirname + '/test/index.html'); });
 
