@@ -22,9 +22,12 @@ app.use(cors()); //to enable Cross-Origin Resource Sharing
 // app.get('/app', function (req, res, next) {  res.sendFile(path.join(__dirname, 'test', 'index.html')); });
 //app.get('/app', function (req, res, next) { res.sendFile(__dirname + '/test/index.html'); });
 
+app.get('a', (req, res) => res.sendFile(__dirname + '/test/index.html'));
+
+
 //OK
 app.get('/', (req, res) => res.sendFile(__dirname + '/html/index.html'));   //works
-app.get('/a', (req, res) => res.sendFile(__dirname + '/test/index.html'));   //works
+
 
 var path = require('path');
 
