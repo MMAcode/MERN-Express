@@ -18,15 +18,16 @@ const port = process.env.PORT || 3001;
 // app.get('/', (req, res) => res.sendFile(__dirname + '/build-copy/index.html')); 
 
 
-//NOT working ONLY online
-app.use(express.static(__dirname +"/test"));    //works locally, NOT online
+//NOT working
+// app.use(express.static(__dirname +"build-copy")); 
 // app.get('/app', function (req, res, next) {  res.sendFile(path.join(__dirname, 'test', 'index.html')); });
 app.get('/appReact', function (req, res, next) { res.sendFile(__dirname + '/build-copy/index.html'); });
 
 
 //OK
-app.get('/', (req, res) => {  res.sendFile(__dirname + '/html/index.html');});   
-app.get('/a', (req, res) => {  res.sendFile(__dirname + '/test/index.html');});
+app.use(express.static(__dirname + "/test"));
+// app.get('/', (req, res) => { res.sendFile(__dirname + '/html/index.html'); });   
+app.get('/a', (req, res) => { res.sendFile(__dirname + '/test/index.html'); });
 
 
 var path = require('path');
