@@ -25,9 +25,10 @@ app.use(cors()); //to enable Cross-Origin Resource Sharing
 
 // app.get('/', (req, res) => res.sendFile(__dirname+'/html/serverHtmlTest.html'));
 
-app.use(express.static("build-copy"));
+// app.use(express.static("build-copy"));
+app.use(express.static("test"));
 
-app.get('/', (req, res) => res.sendFile(__dirname + '/html/index.html'));
+// app.get('/', (req, res) => res.sendFile(__dirname + '/html/index.html'));
 
 
 app.listen(port, () => console.log(`Miro's server-express listening at http://localhost:${port}.`))
