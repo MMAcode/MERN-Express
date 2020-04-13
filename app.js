@@ -21,22 +21,12 @@ const port = process.env.PORT || 3001;
 //NOT working ONLY online
 // app.use(express.static("test"));    //works locally, NOT online
 // app.get('/app', function (req, res, next) {  res.sendFile(path.join(__dirname, 'test', 'index.html')); });
-app.get('/app', function (req, res, next) { res.sendFile(__dirname + '/test/index.html'); });
 app.get('/appReact', function (req, res, next) { res.sendFile(__dirname + '/build-copy/index.html'); });
-
-// app.get('/a', (req, res) => res.sendFile(__dirname + '/test/index.html'));
-app.get('/a', (req, res) => {
-  console.log("ahoj from /a route");
-  res.sendFile(__dirname + '/test/index.html');
-});
-// app.get('a', (req, res) => res.sendFile(__dirname + '/test/index.html')); - not working at all
 
 
 //OK
-app.get('/', (req, res) => {
-  console.log("ahoj from home route");
-  res.sendFile(__dirname + '/html/index.html');
-});   //works
+app.get('/', (req, res) => {  res.sendFile(__dirname + '/html/index.html');});   
+app.get('/a', (req, res) => {  res.sendFile(__dirname + '/test/index.html');});
 
 
 var path = require('path');
