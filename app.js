@@ -24,6 +24,9 @@ app.use(cors()); //to enable Cross-Origin Resource Sharing
 // module.exports = app;
 
 // app.get('/', (req, res) => res.sendFile(__dirname+'/html/serverHtmlTest.html'));
+
+app.use(express.static("build-copy"));
+
 app.get('/', (req, res) => res.sendFile(__dirname + '/html/index.html'));
 
 
