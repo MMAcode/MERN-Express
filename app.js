@@ -21,7 +21,7 @@ const port = process.env.PORT || 3001;
 //NOT working ONLY online
 // app.use(express.static("test"));    //works locally, NOT online
 // app.get('/app', function (req, res, next) {  res.sendFile(path.join(__dirname, 'test', 'index.html')); });
-// app.get('/app', function (req, res, next) { res.sendFile(__dirname + '/test/index.html'); });
+app.get('/app', function (req, res, next) { res.sendFile(__dirname + '/test/index.html'); });
 
 // app.get('/a', (req, res) => res.sendFile(__dirname + '/test/index.html'));
 app.get('/a', (req, res) => {
